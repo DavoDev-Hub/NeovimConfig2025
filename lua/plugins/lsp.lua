@@ -12,6 +12,7 @@ require("mason-lspconfig").setup({
         "html",
         "cssls",
         "bashls",
+        "tsp_server"
     },
 })
 
@@ -31,7 +32,7 @@ local on_attach = function(_, bufnr)
 end
 
 -- Manually configure servers
-local servers = { "lua_ls", "pyright", "ts_ls", "html", "cssls", "bashls" }
+local servers = { "lua_ls", "pyright", "ts_ls", "html", "cssls", "bashls", "ts_ls" }
 
 for _, server in ipairs(servers) do
     lspconfig[server].setup({

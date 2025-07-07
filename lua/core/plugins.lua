@@ -107,7 +107,18 @@ require("lazy").setup({
         },
         cmd = "LazyGit",
     },
-
+    {
+        "ojroques/nvim-osc52",
+        config = function()
+            require("osc52").setup()
+            vim.api.nvim_set_option("clipboard", "unnamed")
+            vim.keymap.set("v", "<leader>c", require("osc52").copy_visual, { desc = "Copy with OSC52" })
+        end,
+    },
+    {
+        "ThePrimeagen/harpoon",
+        dependencies = { "nvim-lua/plenary.nvim" },
+    }
 })
 
 
@@ -119,3 +130,4 @@ require("plugins.lsp")
 require("plugins.cmp")
 require("plugins.comment")
 require("plugins.theme")
+require("plugins.harpoon")

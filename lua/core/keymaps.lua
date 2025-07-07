@@ -1,12 +1,11 @@
 -- lua/core/keymaps.lua
 
+vim.g.mapleader = " "
 local keymap = vim.keymap
 
 -- Shorten function name
 local opts = { noremap = true, silent = true }
 
--- Set leader key as space (just in case)
-vim.g.mapleader = " "
 
 -- General keymaps
 keymap.set("i", "jk", "<Esc>", opts)             -- Exit insert mode with jk
@@ -26,9 +25,13 @@ keymap.set("n", "<leader>sx", ":close<CR>", opts) -- Close current split window
 -- Tab management
 keymap.set("n", "<leader>to", ":tabnew<CR>", opts)   -- Open new tab
 keymap.set("n", "<leader>tx", ":tabclose<CR>", opts) -- Close current tab
-keymap.set("n", "<leader>tn", ":tabn<CR>", opts)     -- Go to next tab
-keymap.set("n", "<leader>tp", ":tabp<CR>", opts)     -- Go to previous tab
+-- keymap.set("n", "<leader>pv", ":tabn<CR>", opts)     -- Go to next tab
+-- keymap.set("n", "<leader>nv", ":tabp<CR>", opts)     -- Go to previous tab
+keymap.set("n", "<leader>pv", ":bn<CR>", opts) -- Ir al siguiente buffer
+keymap.set("n", "<leader>nv", ":bp<CR>", opts) -- Ir al buffer anterior
 
+--
+--
 -- Plugin-related mappings (we’ll activate them later)
 keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", opts)
 keymap.set("n", "<leader>fg", "<cmd>Telescope live_grep<cr>", opts)
@@ -43,3 +46,7 @@ end, { desc = "Flash jump", noremap = true, silent = true })
 
 keymap.set("n", "<leader>gg", "<cmd>LazyGit<cr>", opts)
 
+
+
+-- Copy to system clipboard using visual mode
+vim.keymap.set("v", "<leader>y", '"+y', { desc = "Copy to system clipboard" })
