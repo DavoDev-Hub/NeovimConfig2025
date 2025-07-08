@@ -16,11 +16,11 @@ require("nvim-treesitter.configs").setup({
         enable = true,
     },
 
-    rainbow = {
-        enable = true,
-        query = "rainbow-parens",
-        strategy = require("ts-rainbow").strategy.global,
-        extended_mode = true,
-        max_file_lines = nil,
-    },
+    -- rainbow = {
+    --     enable = true,
+    --     query = "rainbow-parens",
+    --     strategy = require("ts-rainbow").strategy.global,
+    --     extended_mode = true,
+    --     max_file_lines = nil,
+    -- },
 })
