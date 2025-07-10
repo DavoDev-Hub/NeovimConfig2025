@@ -12,7 +12,8 @@ require("mason-lspconfig").setup({
         "html",
         "cssls",
         "bashls",
-        "tsp_server"
+        "tsp_server",
+        "tailwindcss"
     },
 })
 

@@ -36,8 +36,8 @@ require("lazy").setup({
     "lewis6991/gitsigns.nvim",
 
     -- LSP support
-    { "williamboman/mason.nvim" },
-    { "williamboman/mason-lspconfig.nvim" },
+    { "mason.org/mason.nvim" },
+    { "mason.org/mason-lspconfig.nvim" },
     -- Autocompletion
     { "hrsh7th/nvim-cmp" },
     { "hrsh7th/cmp-nvim-lsp" },
